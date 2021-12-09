@@ -1,11 +1,18 @@
 export const modalData = {
   'data': [{
-    'id': '1', 'type': 'anime', 'links': {'self': 'https://kitsu.io/api/edge/anime/1'}, 'attributes': {
+    'id': '1',
+    'type': 'anime',
+    'links': {'self': 'https://kitsu.io/api/edge/anime/1'},
+    'attributes': {
       'createdAt': '2013-02-20T16:00:13.609Z',
       'updatedAt': '2021-12-08T15:51:07.525Z',
       'slug': 'cowboy-bebop',
       'synopsis': 'In the year 2is named after.\n\n(Source: MAL Rewrite)',
-      'description': ' named after.\n\n(Source: MAL Rewrite)',
+      'description': ' named aftercvvvvvvvvvvvvvv xv sd gdsfg dfs h' +
+        'gisfghjsdf ' +
+        'ghkjlsdfhg klsdfghklsdfhg skdfh gi suerdhg isdfhg ils' +
+        'udfhgklsdfhgklsd' +
+        'fhg ksldfgh.\n\n(Source: MAL Rewrite)',
       'coverImageTopOffset': 400,
       'titles': {'en': 'Cowboy Bebop'},
       'canonicalTitle': 'Cowboy Bebop',
@@ -78,7 +85,8 @@ export const modalData = {
       'youtubeVideoId': 'qig4KOK2R2g',
       'showType': 'TV',
       'nsfw': false,
-    }, 'relationships': {
+    },
+    'relationships': {
       'genres': {
         'links': {
           'self': 'https://kitsu.io/api/edge/anime/1/relationships/genres',
@@ -177,7 +185,10 @@ export const modalData = {
       },
     },
   }, {
-    'id': '2', 'type': 'anime', 'links': {'self': 'https://kitsu.io/api/edge/anime/2'}, 'attributes': {
+    'id': '2',
+    'type': 'anime',
+    'links': {'self': 'https://kitsu.io/api/edge/anime/2'},
+    'attributes': {
       'createdAt': '2013-02-20T16:00:16.085Z',
       'updatedAt': '2021-12-08T12:00:04.418Z',
       'slug': 'cowboy-bebop-tengoku-no-tobira',
@@ -260,7 +271,8 @@ export const modalData = {
       'youtubeVideoId': 'hc7IxJ93jtM',
       'showType': 'movie',
       'nsfw': false,
-    }, 'relationships': {
+    },
+    'relationships': {
       'genres': {
         'links': {
           'self': 'https://kitsu.io/api/edge/anime/2/relationships/genres',
@@ -359,7 +371,10 @@ export const modalData = {
       },
     },
   }, {
-    'id': '3', 'type': 'anime', 'links': {'self': 'https://kitsu.io/api/edge/anime/3'}, 'attributes': {
+    'id': '3',
+    'type': 'anime',
+    'links': {'self': 'https://kitsu.io/api/edge/anime/3'},
+    'attributes': {
       'createdAt': '2013-02-20T16:00:17.112Z',
       'updatedAt': '2021-12-08T15:51:21.965Z',
       'slug': 'trigun',
@@ -437,7 +452,8 @@ export const modalData = {
       'youtubeVideoId': 'bJVyIXeUznY',
       'showType': 'TV',
       'nsfw': false,
-    }, 'relationships': {
+    },
+    'relationships': {
       'genres': {
         'links': {
           'self': 'https://kitsu.io/api/edge/anime/3/relationships/genres',
@@ -536,7 +552,10 @@ export const modalData = {
       },
     },
   }, {
-    'id': '4', 'type': 'anime', 'links': {'self': 'https://kitsu.io/api/edge/anime/4'}, 'attributes': {
+    'id': '4',
+    'type': 'anime',
+    'links': {'self': 'https://kitsu.io/api/edge/anime/4'},
+    'attributes': {
       'createdAt': '2013-02-20T16:00:18.116Z',
       'updatedAt': '2021-12-08T12:00:04.418Z',
       'slug': 'witch-hunter-robin',
@@ -614,7 +633,8 @@ export const modalData = {
       'youtubeVideoId': '7UkaILjPk8M',
       'showType': 'TV',
       'nsfw': false,
-    }, 'relationships': {
+    },
+    'relationships': {
       'genres': {
         'links': {
           'self': 'https://kitsu.io/api/edge/anime/4/relationships/genres',
@@ -714,7 +734,10 @@ export const modalData = {
     },
   },
   {
-    'id': '5', 'type': 'anime', 'links': {'self': 'https://kitsu.io/api/edge/anime/5'}, 'attributes': {
+    'id': '5',
+    'type': 'anime',
+    'links': {'self': 'https://kitsu.io/api/edge/anime/5'},
+    'attributes': {
       'createdAt': '2013-02-20T16:00:18.955Z',
       'updatedAt': '2021-12-08T12:00:04.418Z',
       'slug': 'beet-the-vandel-buster',
@@ -780,7 +803,8 @@ export const modalData = {
       'youtubeVideoId': '',
       'showType': 'TV',
       'nsfw': false,
-    }, 'relationships': {
+    },
+    'relationships': {
       'genres': {
         'links': {
           'self': 'https://kitsu.io/api/edge/anime/5/relationships/genres',
@@ -884,5 +908,408 @@ export const modalData = {
     'first': 'https://kitsu.io/api/edge/anime?page%5Blimit%5D=5&page%5Boffset%5D=0',
     'next': 'https://kitsu.io/api/edge/anime?page%5Blimit%5D=5&page%5Boffset%5D=5',
     'last': 'https://kitsu.io/api/edge/anime?page%5Blimit%5D=5&page%5Boffset%5D=17276',
+  },
+};
+
+export const categoriesData = {
+  'data': [{
+    'id': '1',
+    'type': 'categories',
+    'links': {'self': 'https://kitsu.io/api/edge/categories/1'},
+    'attributes': {
+      'createdAt': '2017-05-31T06:38:28.636Z',
+      'updatedAt': '2021-10-02T01:31:01.196Z',
+      'title': 'Middle School',
+      'description': '',
+      'totalMediaCount': 105,
+      'slug': 'middle-school',
+      'nsfw': false,
+      'childCount': 0,
+    },
+    'relationships': {
+      'parent': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/1/relationships/parent',
+          'related': 'https://kitsu.io/api/edge/categories/1/parent',
+        },
+      },
+      'anime': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/1/relationships/anime',
+          'related': 'https://kitsu.io/api/edge/categories/1/anime',
+        },
+      },
+      'drama': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/1/relationships/drama',
+          'related': 'https://kitsu.io/api/edge/categories/1/drama',
+        },
+      },
+      'manga': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/1/relationships/manga',
+          'related': 'https://kitsu.io/api/edge/categories/1/manga',
+        },
+      },
+    },
+  }, {
+    'id': '2',
+    'type': 'categories',
+    'links': {'self': 'https://kitsu.io/api/edge/categories/2'},
+    'attributes': {
+      'createdAt': '2017-05-31T06:38:28.722Z',
+      'updatedAt': '2021-10-02T01:31:01.621Z',
+      'title': 'Cycling',
+      'description': '',
+      'totalMediaCount': 18,
+      'slug': 'cycling',
+      'nsfw': false,
+      'childCount': 0,
+    },
+    'relationships': {
+      'parent': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/2/relationships/parent',
+          'related': 'https://kitsu.io/api/edge/categories/2/parent',
+        },
+      },
+      'anime': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/2/relationships/anime',
+          'related': 'https://kitsu.io/api/edge/categories/2/anime',
+        },
+      },
+      'drama': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/2/relationships/drama',
+          'related': 'https://kitsu.io/api/edge/categories/2/drama',
+        },
+      },
+      'manga': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/2/relationships/manga',
+          'related': 'https://kitsu.io/api/edge/categories/2/manga',
+        },
+      },
+    },
+  }, {
+    'id': '3',
+    'type': 'categories',
+    'links': {'self': 'https://kitsu.io/api/edge/categories/3'},
+    'attributes': {
+      'createdAt': '2017-05-31T06:38:28.745Z',
+      'updatedAt': '2021-10-02T01:31:01.213Z',
+      'title': 'Elementary School',
+      'totalMediaCount': 89,
+      'slug': 'elementary-school',
+      'nsfw': false,
+      'childCount': 0,
+    },
+    'relationships': {
+      'parent': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/3/relationships/parent',
+          'related': 'https://kitsu.io/api/edge/categories/3/parent',
+        },
+      },
+      'anime': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/3/relationships/anime',
+          'related': 'https://kitsu.io/api/edge/categories/3/anime',
+        },
+      },
+      'drama': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/3/relationships/drama',
+          'related': 'https://kitsu.io/api/edge/categories/3/drama',
+        },
+      },
+      'manga': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/3/relationships/manga',
+          'related': 'https://kitsu.io/api/edge/categories/3/manga',
+        },
+      },
+    },
+  }, {
+    'id': '4',
+    'type': 'categories',
+    'links': {'self': 'https://kitsu.io/api/edge/categories/4'},
+    'attributes': {
+      'createdAt': '2017-05-31T06:38:28.770Z',
+      'updatedAt': '2021-10-02T01:30:58.992Z',
+      'title': 'Mermaid',
+      'totalMediaCount': 29,
+      'slug': 'mermaid',
+      'nsfw': false,
+      'childCount': 0,
+    },
+    'relationships': {
+      'parent': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/4/relationships/parent',
+          'related': 'https://kitsu.io/api/edge/categories/4/parent',
+        },
+      },
+      'anime': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/4/relationships/anime',
+          'related': 'https://kitsu.io/api/edge/categories/4/anime',
+        },
+      },
+      'drama': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/4/relationships/drama',
+          'related': 'https://kitsu.io/api/edge/categories/4/drama',
+        },
+      },
+      'manga': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/4/relationships/manga',
+          'related': 'https://kitsu.io/api/edge/categories/4/manga',
+        },
+      },
+    },
+  }, {
+    'id': '5',
+    'type': 'categories',
+    'links': {'self': 'https://kitsu.io/api/edge/categories/5'},
+    'attributes': {
+      'createdAt': '2017-05-31T06:38:28.792Z',
+      'updatedAt': '2021-10-02T01:30:58.806Z',
+      'title': 'Android',
+      'totalMediaCount': 196,
+      'slug': 'android',
+      'nsfw': false,
+      'childCount': 0,
+    },
+    'relationships': {
+      'parent': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/5/relationships/parent',
+          'related': 'https://kitsu.io/api/edge/categories/5/parent',
+        },
+      },
+      'anime': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/5/relationships/anime',
+          'related': 'https://kitsu.io/api/edge/categories/5/anime',
+        },
+      },
+      'drama': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/5/relationships/drama',
+          'related': 'https://kitsu.io/api/edge/categories/5/drama',
+        },
+      },
+      'manga': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/5/relationships/manga',
+          'related': 'https://kitsu.io/api/edge/categories/5/manga',
+        },
+      },
+    },
+  }, {
+    'id': '6',
+    'type': 'categories',
+    'links': {'self': 'https://kitsu.io/api/edge/categories/6'},
+    'attributes': {
+      'createdAt': '2017-05-31T06:38:29.320Z',
+      'updatedAt': '2021-10-02T01:31:01.231Z',
+      'title': 'All Girls School',
+      'totalMediaCount': 114,
+      'slug': 'all-girls-school',
+      'nsfw': false,
+      'childCount': 0,
+    },
+    'relationships': {
+      'parent': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/6/relationships/parent',
+          'related': 'https://kitsu.io/api/edge/categories/6/parent',
+        },
+      },
+      'anime': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/6/relationships/anime',
+          'related': 'https://kitsu.io/api/edge/categories/6/anime',
+        },
+      },
+      'drama': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/6/relationships/drama',
+          'related': 'https://kitsu.io/api/edge/categories/6/drama',
+        },
+      },
+      'manga': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/6/relationships/manga',
+          'related': 'https://kitsu.io/api/edge/categories/6/manga',
+        },
+      },
+    },
+  }, {
+    'id': '7',
+    'type': 'categories',
+    'links': {'self': 'https://kitsu.io/api/edge/categories/7'},
+    'attributes': {
+      'createdAt': '2017-05-31T06:38:30.558Z',
+      'updatedAt': '2021-10-02T01:30:58.336Z',
+      'title': 'Vampire',
+      'totalMediaCount': 567,
+      'slug': 'vampire',
+      'nsfw': false,
+      'childCount': 0,
+    },
+    'relationships': {
+      'parent': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/7/relationships/parent',
+          'related': 'https://kitsu.io/api/edge/categories/7/parent',
+        },
+      },
+      'anime': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/7/relationships/anime',
+          'related': 'https://kitsu.io/api/edge/categories/7/anime',
+        },
+      },
+      'drama': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/7/relationships/drama',
+          'related': 'https://kitsu.io/api/edge/categories/7/drama',
+        },
+      },
+      'manga': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/7/relationships/manga',
+          'related': 'https://kitsu.io/api/edge/categories/7/manga',
+        },
+      },
+    },
+  }, {
+    'id': '8',
+    'type': 'categories',
+    'links': {'self': 'https://kitsu.io/api/edge/categories/8'},
+    'attributes': {
+      'createdAt': '2017-05-31T06:38:30.856Z',
+      'updatedAt': '2021-10-02T01:31:01.661Z',
+      'title': 'Wrestling',
+      'totalMediaCount': 21,
+      'slug': 'wrestling',
+      'nsfw': false,
+      'childCount': 0,
+    },
+    'relationships': {
+      'parent': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/8/relationships/parent',
+          'related': 'https://kitsu.io/api/edge/categories/8/parent',
+        },
+      },
+      'anime': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/8/relationships/anime',
+          'related': 'https://kitsu.io/api/edge/categories/8/anime',
+        },
+      },
+      'drama': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/8/relationships/drama',
+          'related': 'https://kitsu.io/api/edge/categories/8/drama',
+        },
+      },
+      'manga': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/8/relationships/manga',
+          'related': 'https://kitsu.io/api/edge/categories/8/manga',
+        },
+      },
+    },
+  }, {
+    'id': '9',
+    'type': 'categories',
+    'links': {'self': 'https://kitsu.io/api/edge/categories/9'},
+    'attributes': {
+      'createdAt': '2017-05-31T06:38:30.881Z',
+      'updatedAt': '2021-10-02T01:30:58.528Z',
+      'title': 'Samurai',
+      'description': '',
+      'totalMediaCount': 413,
+      'slug': 'samurai',
+      'nsfw': false,
+      'childCount': 0,
+    },
+    'relationships': {
+      'parent': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/9/relationships/parent',
+          'related': 'https://kitsu.io/api/edge/categories/9/parent',
+        },
+      },
+      'anime': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/9/relationships/anime',
+          'related': 'https://kitsu.io/api/edge/categories/9/anime',
+        },
+      },
+      'drama': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/9/relationships/drama',
+          'related': 'https://kitsu.io/api/edge/categories/9/drama',
+        },
+      },
+      'manga': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/9/relationships/manga',
+          'related': 'https://kitsu.io/api/edge/categories/9/manga',
+        },
+      },
+    },
+  }, {
+    'id': '10',
+    'type': 'categories',
+    'links': {'self': 'https://kitsu.io/api/edge/categories/10'},
+    'attributes': {
+      'createdAt': '2017-05-31T06:38:31.311Z',
+      'updatedAt': '2021-10-02T01:30:59.009Z',
+      'title': 'Elf',
+      'totalMediaCount': 157,
+      'slug': 'elf',
+      'nsfw': false,
+      'childCount': 0,
+    },
+    'relationships': {
+      'parent': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/10/relationships/parent',
+          'related': 'https://kitsu.io/api/edge/categories/10/parent',
+        },
+      },
+      'anime': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/10/relationships/anime',
+          'related': 'https://kitsu.io/api/edge/categories/10/anime',
+        },
+      },
+      'drama': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/10/relationships/drama',
+          'related': 'https://kitsu.io/api/edge/categories/10/drama',
+        },
+      },
+      'manga': {
+        'links': {
+          'self': 'https://kitsu.io/api/edge/categories/10/relationships/manga',
+          'related': 'https://kitsu.io/api/edge/categories/10/manga',
+        },
+      },
+    },
+  }],
+  'meta': {'count': 218},
+  'links': {
+    'first': 'https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=0',
+    'next': 'https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=10',
+    'last': 'https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=208',
   },
 };

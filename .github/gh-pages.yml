@@ -1,9 +1,13 @@
+
 name: Build & deploy
 
 on:
   push:
     branches:
-      - main
+      - dev
+  pull_request:
+    branches:
+      - dev
 
 jobs:
   build:
@@ -20,10 +24,32 @@ jobs:
           node-version: 16.x
 
       - name: Install YARN packages
-        run: yarn install
+        run: yarn ci
 
       - name: Build project
-        run:   CI=false yarn build
+        run: yarn run build
+
+      - name: Run tests
+        run: yarn run test
+
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v2
+        with:
+          name: production-files
+          path: ./build
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: production-files
+          path: ./build
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3

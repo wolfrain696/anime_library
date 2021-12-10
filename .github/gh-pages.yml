@@ -3,7 +3,7 @@ name: Build & deploy
 on:
   push:
     branches:
-      - dev
+      - main
 
 jobs:
   build:
@@ -17,13 +17,13 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 14.x
+          node-version: 16.x
 
       - name: Install YARN packages
-        run: yarn ci
+        run: yarn install
 
       - name: Build project
-        run: yarn build
+        run: yarn run build
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3

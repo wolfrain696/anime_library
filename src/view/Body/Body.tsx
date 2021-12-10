@@ -2,12 +2,10 @@ import * as React from 'react';
 import {styled} from '@mui/material/styles';
 import {
   Box,
-  Card,
-  CardActionArea,
-  CardContent, SxProps,
-  Typography,
 } from '@mui/material';
 import {modalData} from '../../modal/rawData';
+import {ViewCard} from './ViewCard/ViewCard';
+import {useAppSelector} from '../../hooks/ReduxHooks';
 
 const BodyContainer = styled(Box)(({theme}) => ({
   backgroundColor: 'white',
@@ -21,34 +19,14 @@ const BodyContainer = styled(Box)(({theme}) => ({
   gap: 10,
 }));
 
-const cardStyle : SxProps = {
-  actionArea: {
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-  },
-};
-
 
 export const Body = () => {
-  const Cards = modalData.data.map((el) => (
-    <Card key={el.id} sx={{flex: '0 0 32.5%'}}>
-      <CardActionArea sx={cardStyle.actionArea}>
-        <img src={el.attributes.posterImage.small}
-          style={{display: 'block', width: '100%'}}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {el.attributes.titles.en}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Start date : {el.attributes.startDate}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+  const {animeData} = useAppSelector((state) => state.search);
+  const Cards = animeData.map((el) => (
+    <ViewCard key={el.id} img={el.attributes.posterImage.small}
+      title={el.attributes.titles.en}
+      startDate={el.attributes.startDate}
+      id={el.id}/>
   ));
 
   return (

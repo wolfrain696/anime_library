@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {getAnimeData, getCategories, searchAnimeData} from '../../modal/modalSearchAnime';
 
-type animeDataType = [{
+export type animeDataType = [{
   id: string,
   attributes: {
     description: string,

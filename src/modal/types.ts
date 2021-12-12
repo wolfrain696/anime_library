@@ -1,1 +1,1 @@
-export type searchAnimeArgs = [string?, string?]
+export type searchAnimeArgs = [string, string]

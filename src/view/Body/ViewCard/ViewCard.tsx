@@ -7,6 +7,8 @@ import {
   Typography,
 } from '@mui/material';
 import {memo} from 'react';
+import {Link} from 'react-router-dom';
+import {PageType} from '../../../store/Reducers/PageReducer';
 
 
 const cardStyle : SxProps = {
@@ -22,28 +24,33 @@ const cardStyle : SxProps = {
 type viewCard = {
   img: string
   title: string
-  startDate: string,
+  startDate: string
   id: string
+  element: PageType
+  onPage: (element: PageType) => void
 }
 
 
-export const ViewCard = ({img, title, startDate, id} : viewCard) => {
+export const ViewCard = ({img, title, startDate, id, element, onPage} : viewCard) => {
   return (
-    <Card id={id} sx={{flex: '0 0 32.5%'}}>
-      <CardActionArea sx={cardStyle.actionArea}>
-        <img src={img}
-          style={{display: 'block', width: '100%'}}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {title}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
+    <Card onClick={() => onPage(element)} id={id} sx={{flex: '0 0 32.5%'}}>
+      <Link style={{textDecoration: 'none', color: 'black'}} to={'/anime_library/' + title}>
+        <CardActionArea sx={cardStyle.actionArea}>
+          <img src={img}
+            style={{display: 'block', width: '100%'}}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              {title}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
             Start date : {startDate}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Link>
     </Card>
+
 
   );
 };

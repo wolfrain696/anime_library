@@ -6,14 +6,14 @@ import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import {useAppDispatch, useAppSelector} from '../../hooks/ReduxHooks';
-import {changeValueSearch} from './SearchReducer';
+import {changeValueSearch} from '../../store/Reducers/SearchReducer';
 import {
   MediaIconButton,
   SearchIconWrapper,
   StyledInputBase,
   Search,
 } from './HeaderStyled';
-import {getAnimeData} from '../../modal/modalSearchAnime';
+import {searchAnimeData} from '../../modal/modalSearchAnime';
 
 
 export const Header = () => {
@@ -26,7 +26,7 @@ export const Header = () => {
 
   const searchAnime = (e : React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      dispatch(getAnimeData(value));
+      value.trim() && dispatch(searchAnimeData([value, 'text']));
     }
   };
 

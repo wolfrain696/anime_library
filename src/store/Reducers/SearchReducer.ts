@@ -1,11 +1,13 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {getAnimeData} from '../../modal/modalSearchAnime';
-import {modalData} from '../../modal/rawData';
+import {getAnimeData, getCategories, searchAnimeData} from '../../modal/modalSearchAnime';
 
 type animeDataType = [{
   id: string,
   attributes: {
     description: string,
+    titles: {
+      en: string
+    }
     canonicalTitle: string,
     startDate: string,
     popularityRank: number,
@@ -16,7 +18,7 @@ type animeDataType = [{
     },
     episodeCount: number
   }
-}] | any[]
+}] | []
 
 
 type SearchReducerTypes = {
@@ -24,13 +26,23 @@ type SearchReducerTypes = {
   animeData: animeDataType
   loading : boolean
   error: string
+  categories: {
+    data : [{
+      id: string,
+      attributes: {
+        title: string
+      }
+    }]
+  } | undefined
 }
 
 const initialState : SearchReducerTypes = {
   value: '',
-  animeData: modalData.data,
+  animeData: [],
   loading: false,
   error: '',
+  categories: undefined,
+
 };
 
 
@@ -43,6 +55,18 @@ export const SearchReducer = createSlice({
     },
   },
   extraReducers: {
+    [searchAnimeData.fulfilled.type]: ( state, action : PayloadAction<animeDataType>) => {
+      state.loading = false;
+      state.error = '';
+      state.animeData = action.payload;
+    },
+    [searchAnimeData.pending.type]: ( state, action : PayloadAction<animeDataType>) => {
+      state.loading = true;
+    },
+    [searchAnimeData.rejected.type]: ( state, action : PayloadAction<string>) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
     [getAnimeData.fulfilled.type]: ( state, action : PayloadAction<animeDataType>) => {
       state.loading = false;
       state.error = '';
@@ -55,7 +79,15 @@ export const SearchReducer = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
-
+    [getCategories.fulfilled.type]: (state, action: PayloadAction<SearchReducerTypes['categories']>) => {
+      state.categories = action.payload;
+      state.error = '';
+    },
+    [getCategories.pending.type]: (state, action: PayloadAction<[]>) => {
+    },
+    [getCategories.rejected.type]: (state, action: PayloadAction<string>) => {
+      state.error = action.payload;
+    },
   },
 
 });

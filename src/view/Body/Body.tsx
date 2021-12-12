@@ -1,13 +1,15 @@
 import * as React from 'react';
 import {styled} from '@mui/material/styles';
 import {
-  Box,
+  Box, LinearProgress,
 } from '@mui/material';
-import {modalData} from '../../modal/rawData';
-import {ViewCard} from './ViewCard/ViewCard';
-import {useAppSelector} from '../../hooks/ReduxHooks';
+import {MemoViewCard} from './ViewCard/ViewCard';
+import {useAppDispatch, useAppSelector} from '../../hooks/ReduxHooks';
+import {useEffect} from 'react';
+import {getAnimeData} from '../../modal/modalSearchAnime';
 
 const BodyContainer = styled(Box)(({theme}) => ({
+  position: 'relative',
   backgroundColor: 'white',
   padding: theme.spacing(1),
   color: theme.palette.text.secondary,
@@ -21,16 +23,25 @@ const BodyContainer = styled(Box)(({theme}) => ({
 
 
 export const Body = () => {
-  const {animeData} = useAppSelector((state) => state.search);
-  const Cards = animeData.map((el) => (
-    <ViewCard key={el.id} img={el.attributes.posterImage.small}
+  const dispatch = useAppDispatch();
+  const {animeData, loading} = useAppSelector((state) => state.search);
+  const Cards = animeData?.map((el) => (
+    <MemoViewCard key={el.id} img={el.attributes.posterImage.small}
       title={el.attributes.titles.en}
       startDate={el.attributes.startDate}
       id={el.id}/>
   ));
 
+  useEffect(() => {
+    dispatch(getAnimeData());
+  }, []);
+
   return (
     <BodyContainer>
+      { loading &&
+        <div style={{position: 'absolute', left: 0, top: 0, width: '100%'}}>
+          <LinearProgress/>
+        </div>}
       {Cards}
     </BodyContainer>
   );

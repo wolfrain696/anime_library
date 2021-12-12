@@ -6,6 +6,7 @@ import {
   SxProps,
   Typography,
 } from '@mui/material';
+import {memo} from 'react';
 
 
 const cardStyle : SxProps = {
@@ -46,3 +47,5 @@ export const ViewCard = ({img, title, startDate, id} : viewCard) => {
 
   );
 };
+
+export const MemoViewCard = memo(ViewCard);

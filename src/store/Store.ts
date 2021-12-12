@@ -1,5 +1,5 @@
 import {configureStore} from '@reduxjs/toolkit';
-import SearchReducer from '../view/AppBar/SearchReducer';
+import SearchReducer from './Reducers/SearchReducer';
 
 const store = configureStore({
   reducer: {

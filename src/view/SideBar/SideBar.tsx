@@ -7,8 +7,9 @@ import {
   ListItemText,
   Typography,
 } from '@mui/material';
-import {FC} from 'react';
-import {categoriesData} from '../../modal/rawData';
+import {FC, useEffect} from 'react';
+import {useAppDispatch, useAppSelector} from '../../hooks/ReduxHooks';
+import {getCategories, searchAnimeData} from '../../modal/modalSearchAnime';
 
 const SideBarContainer = styled(Box)(({theme}) => ({
   backgroundColor: 'white',
@@ -21,8 +22,16 @@ const SideBarContainer = styled(Box)(({theme}) => ({
 
 
 export const SideBar : FC = () => {
-  const showCategories = categoriesData.data.map((el) => (
-    <ListItemButton key={el.id}>
+  const {categories} = useAppSelector((state) => state.search);
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(getCategories());
+  }, []);
+  const searchAnimeFromCategories = (value: string) => {
+    dispatch(searchAnimeData([value, 'categories']));
+  };
+  const showCategories = categories?.data.map((el) => (
+    <ListItemButton onClick={() => searchAnimeFromCategories(el.attributes.title)} key={el.id}>
       <ListItemText>
         {el.attributes.title}
       </ListItemText>

@@ -1,8 +1,10 @@
 import * as React from 'react';
 import {
+  Box,
   Card,
   CardActionArea,
   CardContent,
+  styled,
   SxProps,
   Typography,
 } from '@mui/material';
@@ -30,15 +32,33 @@ type viewCard = {
   onPage: (element: PageType) => void
 }
 
+const CardContainer = styled(Card)(({theme}) => ({
+  flex: '0 0 32.5%',
+  [theme.breakpoints.down('md')]: {
+    flex: '0 0 100%',
+    height: '350px',
+    overflow: 'hidden',
+  },
+}));
+
+const AnimeImage = styled(Box)(({theme}) => ({
+  overflow: 'hidden',
+  width: '100%',
+  height: '80%',
+}));
+
 
 export const ViewCard = ({img, title, startDate, id, element, onPage} : viewCard) => {
   return (
-    <Card onClick={() => onPage(element)} id={id} sx={{flex: '0 0 32.5%'}}>
+    <CardContainer onClick={() => onPage(element)} id={id}>
       <Link style={{textDecoration: 'none', color: 'black'}} to={'/anime_library/' + title}>
         <CardActionArea sx={cardStyle.actionArea}>
-          <img src={img}
-            style={{display: 'block', width: '100%'}}
-          />
+          <AnimeImage >
+            <img src={img}
+              style={{display: 'block', width: '100%'}}
+            />
+          </AnimeImage>
+
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {title}
@@ -49,7 +69,7 @@ export const ViewCard = ({img, title, startDate, id, element, onPage} : viewCard
           </CardContent>
         </CardActionArea>
       </Link>
-    </Card>
+    </CardContainer>
 
 
   );

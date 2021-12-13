@@ -61,10 +61,12 @@ export const Body = () => {
         {currentPage &&
         <Route path={'/anime_library/:title'} element={
           <AnimePage
+            description={currentPage.attributes.description}
             img={currentPage.attributes.posterImage.small}
             title={currentPage.attributes.titles.en}
             startDate={currentPage.attributes.startDate}
             episodeCount={currentPage.attributes.episodeCount}
+            youTubeId={currentPage.attributes.youtubeVideoId}
           />
         }/>
         }

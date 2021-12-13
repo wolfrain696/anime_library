@@ -14,10 +14,12 @@ import {
   Search,
 } from './HeaderStyled';
 import {searchAnimeData} from '../../modal/modalSearchAnime';
+import {toggleSideBar} from '../../store/Reducers/ViewReduser';
 
 
 export const Header = () => {
   const {value} = useAppSelector((state) => state.search);
+  const {openedSidebar} = useAppSelector((state) => state.view);
   const dispatch = useAppDispatch();
 
   const changeValue = (e : React.ChangeEvent<HTMLInputElement>) => {
@@ -30,6 +32,11 @@ export const Header = () => {
     }
   };
 
+  const openSidebar = (e: React.BaseSyntheticEvent) => {
+    e.stopPropagation();
+    dispatch(toggleSideBar(!openedSidebar));
+  };
+
   return (
     <Box sx={{flexGrow: 1}}>
       <AppBar position="static" sx={{
@@ -37,6 +44,7 @@ export const Header = () => {
       }}>
         <Toolbar>
           <MediaIconButton
+            onClick={openSidebar}
             size="large"
             edge="start"
             color="inherit"

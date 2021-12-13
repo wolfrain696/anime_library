@@ -1,37 +1,43 @@
-import {Box, Container, Grid} from '@mui/material';
-import React, {FC} from 'react';
-import bgImg from './images/1.png';
+import {Grid} from '@mui/material';
+import React, {FC, useState} from 'react';
 import {Header} from './view/AppBar/Header';
 import {Body} from './view/Body/Body';
 import {SideBar} from './view/SideBar/SideBar';
-
-const styles = {
-  paddingTop: '64px',
-  backgroundImage: `url(${bgImg})`,
-  backgroundColor: '#eee6e1',
-  width: '100%',
-  backgroundSize: 'cover',
-  backgroundRepeat: 'no-repeat',
-  backgroundAttachment: 'fixed',
-  backgroundPosition: '-400px -100px',
-};
-
+import {CustomContainer, GridContainer, GridItemSideBar, MainAppContainer} from './Style/styled';
+import {useAppDispatch, useAppSelector} from './hooks/ReduxHooks';
+import {toggleSideBar} from './store/Reducers/ViewReduser';
 
 const App: FC = () => {
+  const dispatch = useAppDispatch();
+  const {openedSidebar} = useAppSelector((state) => state.view);
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
+  window.onresize = () => setWindowSize(window.innerWidth);
+
+  const StopPropagation = (e : React.BaseSyntheticEvent) => {
+    e.stopPropagation();
+  };
+
+  const closeSidebar = () => {
+    dispatch(toggleSideBar(false));
+  };
+
   return (
-    <Box sx={styles}>
-      <Container maxWidth={'lg'}>
+    <MainAppContainer onClick={closeSidebar}>
+      <CustomContainer maxWidth={'lg'}>
         <Header/>
-        <Grid container spacing={1}>
-          <Grid item xs={3}>
+        <GridContainer container spacing={1}>
+          <GridItemSideBar
+            onClick={StopPropagation}
+            left={openedSidebar ? 0 : '-100%'}
+            item xs={windowSize < 900 ? 6 : 3}>
             <SideBar/>
-          </Grid>
-          <Grid item xs={9}>
+          </GridItemSideBar>
+          <Grid item xs={windowSize < 900 ? 12 : 9}>
             <Body/>
           </Grid>
-        </Grid>
-      </Container>
-    </Box>
+        </GridContainer>
+      </CustomContainer>
+    </MainAppContainer>
   );
 };
 ;

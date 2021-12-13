@@ -4,7 +4,6 @@ import {getAnimeData, getCategories, searchAnimeData} from '../../modal/modalSea
 export type animeDataType = [{
   id: string,
   attributes: {
-    description: string,
     titles: {
       en: string
     }
@@ -16,6 +15,8 @@ export type animeDataType = [{
       medium: string,
       original: string
     },
+    description: string
+    youtubeVideoId: string
     episodeCount: number
   }
 }] | []

@@ -16,6 +16,7 @@ export type PageType = {
       medium: string,
       original: string
     },
+    youtubeVideoId: string
     episodeCount: number
   }
 }
